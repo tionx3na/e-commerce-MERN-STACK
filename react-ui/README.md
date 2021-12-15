@@ -1,5 +1,6 @@
-# Getting Started with Create React App
+# UI For E-Commerce Website
 
+MERN STACK - React UI.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
