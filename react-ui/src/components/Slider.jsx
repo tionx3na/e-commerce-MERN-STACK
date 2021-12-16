@@ -49,6 +49,8 @@ const Slide = styled.div`
 const ImgContainer = styled.div`
   height: 100%;
   flex: 1;
+  padding-left:20%;
+  padding-top:5%;
 `;
 
 const Image = styled.img`
