@@ -4,9 +4,15 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import PinterestIcon from "@mui/icons-material/Pinterest";
+import RoomIcon from "@mui/icons-material/Room";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import EmailIcon from "@mui/icons-material/Email";
 
 const Container = styled.div`
   display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
 `;
 const Left = styled.div`
   flex: 1;
@@ -14,6 +20,7 @@ const Left = styled.div`
   flex-direction: column;
   margin-top: 8px;
   margin-bottom: 8px;
+  margin-left: 8px;
 `;
 
 const Logo = styled.h1``;
@@ -33,18 +40,50 @@ const SocialIcon = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 8px;
+  margin-right: 8px;
 `;
 
 const Center = styled.div`
   flex: 1;
-  padding:20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 8px;
 `;
 
-const Title = styled.h3``
+const Title = styled.h3`
+  margin-bottom: 30px;
+`;
+
+const List = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const ListItem = styled.li`
+  width: 50%;
+  margin-bottom: 10px;
+`;
 
 const Right = styled.div`
   flex: 1;
+  
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 8px;
 `;
+
+const ContactItem = styled.div`
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+`
+
+const Payment = styled.img``
 
 const Footer = () => {
   return (
@@ -70,8 +109,35 @@ const Footer = () => {
           </SocialIcon>
         </SocialContainer>
       </Left>
-      <Center></Center>
-      <Right></Right>
+      <Center>
+        <Title>Useful Links</Title>
+        <List>
+          <ListItem>Home</ListItem>
+          <ListItem>Cart</ListItem>
+          <ListItem>Man Fashion</ListItem>
+          <ListItem>Woman Fashion</ListItem>
+          <ListItem>Accessories</ListItem>
+          <ListItem>My Account</ListItem>
+          <ListItem>Order Tracking</ListItem>
+          <ListItem>Wishlist</ListItem>
+          <ListItem>Terms</ListItem>
+        </List>
+      </Center>
+      <Right>
+        <Title>Contact</Title>
+        <ContactItem>
+          <RoomIcon style={{marginRight:"10px"}}/>
+          Tint 56/32, Trivandrum
+        </ContactItem>
+        <ContactItem>
+          <LocalPhoneIcon style={{marginRight:"10px"}} /> +1 234 56 78
+        </ContactItem>
+        <ContactItem>
+          <EmailIcon style={{marginRight:"10px"}} />
+          contact@xena.com
+        </ContactItem>
+        <Payment src="https://i.ibb.co/Qfvn4z6/payment.png"/>
+      </Right>
     </Container>
   );
 };
