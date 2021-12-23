@@ -11,6 +11,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
+    height: 100vh;
     padding:20px;
 `;
 
@@ -54,9 +55,6 @@ const Bottom = styled.div`
 const Info = styled.div`
     flex: 3;
 `;
-const Summary = styled.div`
-    flex: 1;
-`;
 
 const Product = styled.div`
     display: flex;
@@ -68,6 +66,7 @@ const ProductDetails = styled.div`
 `;
 const Image = styled.img`
     width: 200px;
+    margin-right: 20px;
 `;
 const Details = styled.div`
     padding: 20px;
@@ -87,6 +86,7 @@ const ProductSize = styled.span``;
 const PriceDetail = styled.span`
     flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 `;
@@ -103,6 +103,44 @@ const ProductAmount = styled.div`
 const ProductPrice = styled.div`
     font-size:30px;
     font-weight: 200;
+`;
+
+const Hr = styled.hr`
+    background-color: #eee;
+    border: none;
+    height: 1px;
+`;
+
+const Summary = styled.div`
+    flex: 1;
+    border: 0.5px  solid lightgrey;
+    border-radius: 10px;
+    padding: 20px;
+    height: 50vh;
+`;
+
+const SummaryTitle = styled.h1`
+    font-weight: 200;
+`;
+ 
+const SummaryItem = styled.div`
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: ${props=> props.type === "total" && "500"};
+    font-size: ${props=> props.type === "total" && "24px"};
+`;
+ 
+const SummaryItemText = styled.span``;
+
+const SummaryItemPrice = styled.span``;
+
+const Button = styled.button`
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
 `;
 
 
@@ -144,8 +182,47 @@ const Cart = () => {
                         <ProductPrice>$ 20</ProductPrice>
                     </PriceDetail>
                 </Product>
+                <Hr/>
+                <Product>
+                    <ProductDetails>
+                        <Image src={a7}/>
+                        <Details>
+                            <ProductName><b>Product:</b> JESSIE THUNDER SHOES</ProductName>
+                            <ProductColor color="red"/>
+                            <ProductId><b>Id:</b> 935673</ProductId>
+                            <ProductSize><b>Size:</b> 37.5</ProductSize>
+                        </Details>
+                    </ProductDetails>
+                    <PriceDetail>
+                        <ProductAmountContgainer>
+                            <Add/>
+                            <ProductAmount>2</ProductAmount>
+                            <Remove/>
+                        </ProductAmountContgainer>
+                        <ProductPrice>$ 20</ProductPrice>
+                    </PriceDetail>
+                </Product>
             </Info>
-            <Summary>Summary</Summary>
+            <Summary>
+                <SummaryTitle>Order Summary</SummaryTitle>
+                <SummaryItem>
+                    <SummaryItemText>Subtotal</SummaryItemText>
+                    <SummaryItemPrice>$ 40</SummaryItemPrice>
+                </SummaryItem>
+                <SummaryItem>
+                    <SummaryItemText>Estimated Shipping</SummaryItemText>
+                    <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+                </SummaryItem>
+                <SummaryItem>
+                    <SummaryItemText>Shipping Discount</SummaryItemText>
+                    <SummaryItemPrice>- $ 5.90</SummaryItemPrice>
+                </SummaryItem>
+                <SummaryItem type="total">
+                    <SummaryItemText>Total</SummaryItemText>
+                    <SummaryItemPrice>$ 40</SummaryItemPrice>
+                </SummaryItem>
+                <Button>CHECKOUT NOW</Button>
+            </Summary>
         </Bottom>
       </Wrapper>
       <Footer />
