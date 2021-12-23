@@ -1,6 +1,7 @@
 import { Title } from '@material-ui/icons';
 import React from 'react'
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
     flex:1;

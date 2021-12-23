@@ -7,12 +7,14 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 import RoomIcon from "@mui/icons-material/Room";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 20px;
+  ${mobile({flexDirection: "column"})}
 `;
 const Left = styled.div`
   flex: 1;
@@ -50,6 +52,7 @@ const Center = styled.div`
   margin-top: 8px;
   margin-bottom: 8px;
   margin-left: 8px;
+  ${mobile({display: "none"})}
 `;
 
 const Title = styled.h3`
